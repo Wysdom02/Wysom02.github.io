@@ -5,6 +5,7 @@
  color:#f9f1f1;
  font-family:Courier New;
  text-decoration: none;
+    cursor: url('saturn.png'), auto;
  }
 
 body{
@@ -12,7 +13,75 @@ body{
     /*background-image: url("https://wallpaperaccess.com/full/345780.jpg");*/
     background-image: url("images/Background.jpg");
 
+
 }
+
+.cursor {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+    pointer-events: none;
+}
+
+.cursor::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 18px solid #F9E795;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+    animation: cursorAnim2 .5s infinite alternate;
+
+
+}
+
+
+
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.4);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid red;
+}
+
 
 
  #nav{
@@ -138,10 +207,22 @@ h2
 	flex: 1;
 }
 
+.kolkata:hover
+{
+  transform : scale(1.05);
+  transition-duration: 0.4s;
+  ease-out;
+}
 
 .bits
 {
 	flex: 1;
+}
+.bits:hover
+{
+  transform : scale(1.05);
+  transition-duration: 0.4s;
+  ease-out;
 }
 
 .skillz
@@ -149,6 +230,13 @@ h2
 	flex: 1;
 }
 
+.skillz:hover
+{
+  transform : scale(1.05);
+  transition-duration: 0.5s;
+  
+
+}
 .images
 {
 	display: flex;
@@ -158,11 +246,33 @@ h2
   	margin-top: 5%;
 }
 
+
+
 .imgA
 {
 	flex:1;
 	margin:auto;
 }
+
+.imgA:hover
+{
+ transform: scale(1.1);
+ transition-duration: 0.5s;
+
+}
+.imgB:hover
+{
+ transform: scale(1.1);
+ transition-duration: 0.5s;
+
+}
+.imgC:hover
+{
+ transform: scale(1.1);
+ transition-duration: 0.5s;
+
+}
+
 
 .imgB
 {

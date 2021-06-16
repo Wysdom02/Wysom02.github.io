@@ -12,6 +12,11 @@ function scrollFunction() {
   }
 }
 
+function myFunction() {
+  location.replace("https://docs.google.com/forms/d/e/1FAIpQLScF8b_Ya49GSUNiaOV0KGrkmsIz66ou0BqWnUSKW7M2gIOm7Q/viewform");
+}
+
+
 document.addEventListener("DOMContentLoaded", function( ) { 
     const sections = 
  [document.querySelector(".homeS"),
@@ -98,11 +103,18 @@ sections.forEach(section => {
  observer.observe(section);
 });
 
+        const cursor = document.querySelector('.cursor');
 
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+        })
 
+        document.addEventListener('click', () => {
+            cursor.classList.add("expand");
 
-
-
-
+            setTimeout(() => {
+                cursor.classList.remove("expand");
+            }, 500)
+        })
 
  
